@@ -50,7 +50,12 @@ radial-gradient(ellipse 100% 80% at 50% 100%, rgba(201,169,110,0.1) 0%, transpar
 }
 
 /* Falling sakura petals */
-.petals { position: absolute; inset: 0; pointer-events: none; }
+.petals {
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 999;
+}
 .petal {
 position: absolute;
 width: 8px; height: 10px;
@@ -437,12 +442,12 @@ footer strong { color: #e8a0a8; }
 
 </head>
 <body>
+<div class="petals" id="petals"></div>
 
 <!-- HERO -->
 
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="petals" id="petals"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">春の北海道 · Spring Journey 2026</p>
     <h1 class="hero-title">北<span>海</span>道<br>春旅</h1>
@@ -698,11 +703,46 @@ footer strong { color: #e8a0a8; }
     <div class="day-date">4/26 日</div>
   </div>
   <div class="day-content">
-    <div class="day-title">🌸 函館大眾運輸賞櫻</div>
+    <div class="day-title">🌸 函館市電一日賞櫻</div>
     <ul class="spot-list">
-      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=五稜郭公園" target="_blank">五稜郭公園（星形櫻花林）</a></li>
-      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=函館公園" target="_blank">函館公園</a></li>
-      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=函館+桜が丘通り" target="_blank">櫻之丘通（夢幻櫻花隧道）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <span>🚋 市電：魚市場通 → 函館站前</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <a href="https://maps.google.com/?q=函館朝市" target="_blank">朝市</a>
+        <span style="color:#aaa;font-size:0.78rem">　逛逛・早餐海鮮丼🦐</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <span>🚋 市電：函館站前 → 柏木町</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <a href="https://maps.google.com/?q=函館+桜が丘通り" target="_blank">櫻之丘</a>
+        <span style="color:#aaa;font-size:0.78rem">　夢幻櫻花隧道</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <span>🚌 公車 or 市電（步行較遠）</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <a href="https://maps.google.com/?q=五稜郭公園" target="_blank">五稜郭公園</a>
+        <span style="color:#aaa;font-size:0.78rem">　星形櫻花林・席地午餐🍱</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <span>🚋 市電：五稜郭公園前 → 十字街</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <a href="https://maps.google.com/?q=函館赤レンガ倉庫" target="_blank">紅磚倉庫</a>
+        <span style="color:#aaa;font-size:0.78rem">　+ 小丑漢堡（下午茶，看人潮決定）</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <a href="https://maps.app.goo.gl/kdryooSjFdA55KqWA" target="_blank">八幡坂</a>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <span>🚋 市電 2 號線：十字街 → 青柳町</span>
+      </li>
+      <li class="spot-item"><span class="dot-sm"></span>
+        <a href="https://maps.google.com/?q=函館公園" target="_blank">函館公園・夜鶯櫻花祭</a>
+        <span style="color:#aaa;font-size:0.78rem">　攤位關東煮（晚餐）🏮</span>
+      </li>
     </ul>
   </div>
 </div>
@@ -844,7 +884,7 @@ footer strong { color: #e8a0a8; }
 <script>
 // Sakura petals
 const petalContainer = document.getElementById('petals');
-for (let i = 0; i < 18; i++) {
+for (let i = 0; i < 28; i++) {
   const p = document.createElement('div');
   p.className = 'petal';
   const size = 6 + Math.random() * 8;
