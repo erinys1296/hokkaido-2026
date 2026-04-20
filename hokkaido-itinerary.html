@@ -23,8 +23,8 @@
 - { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-background: var(–cream);
-color: var(–text);
+background: #f7f3ec;
+color: #2d2d3a;
 font-family: ‘DM Sans’, ‘Noto Serif TC’, sans-serif;
 overflow-x: hidden;
 }
@@ -162,21 +162,21 @@ display: flex; align-items: center; justify-content: center;
 font-size: 1.3rem;
 flex-shrink: 0;
 }
-.section-icon.flight { background: linear-gradient(135deg, var(–sky), #7aafcf); }
-.section-icon.car { background: linear-gradient(135deg, #b5c99a, var(–moss)); }
-.section-icon.hotel { background: linear-gradient(135deg, var(–sakura), var(–sakura-deep)); }
-.section-icon.days { background: linear-gradient(135deg, var(–gold), #b8935a); }
+.section-icon.flight { background: linear-gradient(135deg, #a8c5d8, #7aafcf); }
+.section-icon.car { background: linear-gradient(135deg, #b5c99a, #7a9e7e); }
+.section-icon.hotel { background: linear-gradient(135deg, #e8a0a8, #c96a7a); }
+.section-icon.days { background: linear-gradient(135deg, #c9a96e, #b8935a); }
 
 .section-title {
 font-family: ‘Shippori Mincho’, serif;
 font-size: 1.6rem;
 font-weight: 700;
-color: var(–ink);
+color: #1a1a2e;
 }
 .section-divider {
 flex: 1;
 height: 1px;
-background: linear-gradient(to right, var(–blush), transparent);
+background: linear-gradient(to right, #e8d5c4, transparent);
 }
 
 /* FLIGHT CARDS */
@@ -197,8 +197,8 @@ position: absolute;
 top: 0; left: 0; right: 0;
 height: 3px;
 }
-.flight-card.outbound::before { background: linear-gradient(to right, var(–sakura), var(–sakura-deep)); }
-.flight-card.return::before { background: linear-gradient(to right, var(–sky), #5a9abf); }
+.flight-card.outbound::before { background: linear-gradient(to right, #e8a0a8, #c96a7a); }
+.flight-card.return::before { background: linear-gradient(to right, #a8c5d8, #5a9abf); }
 
 .flight-label {
 font-size: 0.65rem;
@@ -210,7 +210,7 @@ padding: 0.25rem 0.6rem;
 border-radius: 100px;
 display: inline-block;
 }
-.flight-card.outbound .flight-label { background: rgba(232,160,168,0.15); color: var(–sakura-deep); }
+.flight-card.outbound .flight-label { background: rgba(232,160,168,0.15); color: #c96a7a; }
 .flight-card.return .flight-label { background: rgba(168,197,216,0.2); color: #3a7a9f; }
 
 .flight-route {
@@ -223,10 +223,10 @@ margin-bottom: 0.5rem;
 font-family: ‘Shippori Mincho’, serif;
 font-size: 1.8rem;
 font-weight: 800;
-color: var(–ink);
+color: #1a1a2e;
 line-height: 1;
 }
-.flight-arrow { color: var(–gold); font-size: 1rem; flex: 1; text-align: center; }
+.flight-arrow { color: #c9a96e; font-size: 1rem; flex: 1; text-align: center; }
 .flight-time {
 font-size: 0.75rem;
 color: #888;
@@ -242,7 +242,7 @@ border-top: 1px solid rgba(0,0,0,0.06);
 font-size: 0.75rem;
 color: #777;
 }
-.flight-number { font-weight: 600; color: var(–ink); }
+.flight-number { font-weight: 600; color: #1a1a2e; }
 
 .flight-segment { margin-bottom: 1rem; }
 .flight-segment:last-child { margin-bottom: 0; }
@@ -267,20 +267,20 @@ font-size: 0.65rem;
 letter-spacing: 0.15em;
 text-transform: uppercase;
 font-weight: 600;
-color: var(–moss);
+color: #7a9e7e;
 margin-bottom: 0.3rem;
 }
 .car-event-time {
 font-family: ‘Shippori Mincho’, serif;
 font-size: 1.3rem;
 font-weight: 700;
-color: var(–ink);
+color: #1a1a2e;
 }
 .car-event-loc { font-size: 0.8rem; color: #888; margin-top: 0.2rem; }
 .car-arrow {
 align-self: center;
 font-size: 1.5rem;
-color: var(–moss);
+color: #7a9e7e;
 opacity: 0.5;
 }
 
@@ -291,7 +291,7 @@ gap: 0.5rem;
 }
 .car-tag {
 background: rgba(122,158,126,0.1);
-color: var(–moss);
+color: #7a9e7e;
 border: 1px solid rgba(122,158,126,0.25);
 border-radius: 100px;
 padding: 0.3rem 0.8rem;
@@ -316,7 +316,7 @@ transition: transform 0.2s, box-shadow 0.2s;
 .hotel-date-badge {
 min-width: 56px;
 text-align: center;
-background: var(–sakura);
+background: #e8a0a8;
 border-radius: 10px;
 padding: 0.5rem;
 flex-shrink: 0;
@@ -325,7 +325,7 @@ flex-shrink: 0;
 .hotel-date-badge .day { font-family: ‘Shippori Mincho’, serif; font-size: 1.4rem; font-weight: 800; color: white; line-height: 1; }
 
 .hotel-info { flex: 1; }
-.hotel-name { font-weight: 600; font-size: 0.95rem; color: var(–ink); margin-bottom: 0.2rem; }
+.hotel-name { font-weight: 600; font-size: 0.95rem; color: #1a1a2e; margin-bottom: 0.2rem; }
 .hotel-city { font-size: 0.75rem; color: #999; }
 .hotel-times { font-size: 0.72rem; color: #aaa; margin-top: 0.15rem; }
 
@@ -336,7 +336,7 @@ gap: 0.3rem;
 padding: 0.4rem 0.9rem;
 border-radius: 100px;
 background: rgba(232,160,168,0.1);
-color: var(–sakura-deep);
+color: #c96a7a;
 font-size: 0.72rem;
 font-weight: 500;
 text-decoration: none;
@@ -344,7 +344,7 @@ border: 1px solid rgba(232,160,168,0.3);
 transition: background 0.2s, border-color 0.2s;
 white-space: nowrap;
 }
-.hotel-map-btn:hover { background: rgba(232,160,168,0.2); border-color: var(–sakura); }
+.hotel-map-btn:hover { background: rgba(232,160,168,0.2); border-color: #e8a0a8; }
 
 /* DAY TIMELINE */
 .days-container { padding-bottom: 4rem; }
@@ -361,29 +361,29 @@ margin-bottom: 2.5rem;
 font-family: ‘Shippori Mincho’, serif;
 font-size: 2.5rem;
 font-weight: 800;
-color: var(–blush);
+color: #e8d5c4;
 line-height: 1;
 }
 .day-label { font-size: 0.65rem; color: #bbb; letter-spacing: 0.05em; }
 .day-date { font-size: 0.72rem; color: #aaa; margin-top: 0.2rem; }
 
-.day-content { border-left: 2px solid var(–blush); padding-left: 1.5rem; padding-bottom: 1rem; position: relative; }
+.day-content { border-left: 2px solid #e8d5c4; padding-left: 1.5rem; padding-bottom: 1rem; position: relative; }
 .day-content::before {
 content: ‘’;
 position: absolute;
 left: -6px; top: 8px;
 width: 10px; height: 10px;
 border-radius: 50%;
-background: var(–sakura);
+background: #e8a0a8;
 border: 2px solid white;
-box-shadow: 0 0 0 2px var(–sakura);
+box-shadow: 0 0 0 2px #e8a0a8;
 }
 
 .day-title {
 font-family: ‘Noto Serif TC’, serif;
 font-size: 1rem;
 font-weight: 700;
-color: var(–ink);
+color: #1a1a2e;
 margin-bottom: 0.8rem;
 }
 
@@ -395,14 +395,14 @@ gap: 0.6rem;
 font-size: 0.85rem;
 color: #555;
 }
-.spot-item .dot-sm { width: 5px; height: 5px; border-radius: 50%; background: var(–sakura); flex-shrink: 0; margin-top: 0.45rem; }
+.spot-item .dot-sm { width: 5px; height: 5px; border-radius: 50%; background: #e8a0a8; flex-shrink: 0; margin-top: 0.45rem; }
 .spot-item a {
 color: #555;
 text-decoration: none;
 border-bottom: 1px dotted rgba(201,106,122,0.4);
 transition: color 0.2s, border-color 0.2s;
 }
-.spot-item a:hover { color: var(–sakura-deep); border-color: var(–sakura-deep); }
+.spot-item a:hover { color: #c96a7a; border-color: #c96a7a; }
 
 .event-badge {
 display: inline-flex;
@@ -410,7 +410,7 @@ align-items: center;
 gap: 0.4rem;
 font-size: 0.75rem;
 font-weight: 600;
-color: var(–moss);
+color: #7a9e7e;
 background: rgba(122,158,126,0.12);
 border-radius: 100px;
 padding: 0.2rem 0.7rem;
@@ -419,68 +419,18 @@ margin-bottom: 0.5rem;
 
 /* FOOTER */
 footer {
-background: var(–ink);
+background: #1a1a2e;
 color: rgba(247,243,236,0.4);
 text-align: center;
 padding: 2.5rem;
 font-size: 0.78rem;
 letter-spacing: 0.05em;
 }
-footer strong { color: var(–sakura); }
-
-/* SHARE BUTTON */
-.share-bar {
-position: fixed;
-bottom: 1.5rem;
-right: 1.5rem;
-z-index: 100;
-display: flex;
-flex-direction: column;
-gap: 0.6rem;
-align-items: flex-end;
-}
-
-.share-btn {
-display: flex;
-align-items: center;
-gap: 0.6rem;
-background: var(–ink);
-color: white;
-border: none;
-border-radius: 100px;
-padding: 0.7rem 1.3rem;
-font-size: 0.82rem;
-font-weight: 500;
-cursor: pointer;
-box-shadow: 0 4px 20px rgba(26,26,46,0.35);
-transition: transform 0.2s, box-shadow 0.2s;
-font-family: ‘DM Sans’, sans-serif;
-letter-spacing: 0.02em;
-}
-.share-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,26,46,0.45); }
-.share-btn.primary { background: linear-gradient(135deg, var(–sakura-deep), #a84a5e); }
-.share-btn.copy-btn { background: linear-gradient(135deg, #5a7a5e, var(–moss)); }
-
-.toast {
-position: fixed;
-bottom: 6rem;
-right: 1.5rem;
-background: var(–ink);
-color: var(–cream);
-padding: 0.7rem 1.2rem;
-border-radius: 10px;
-font-size: 0.82rem;
-opacity: 0;
-transform: translateY(10px);
-transition: all 0.3s;
-pointer-events: none;
-box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-}
-.toast.show { opacity: 1; transform: translateY(0); }
+footer strong { color: #e8a0a8; }
 
 /* Print */
 @media print {
-.share-bar, .scroll-hint { display: none; }
+.scroll-hint { display: none; }
 .hero { min-height: 40vh; }
 }
 </style>
@@ -636,7 +586,7 @@ box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 
 ```
   <div class="hotel-item">
-    <div class="hotel-date-badge">
+    <div class="hotel-date-badge" style="background:#e8a0a8">
       <div class="month">APR</div>
       <div class="day">25</div>
     </div>
@@ -648,7 +598,7 @@ box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   </div>
 
   <div class="hotel-item">
-    <div class="hotel-date-badge" style="background:var(--sky)">
+    <div class="hotel-date-badge" style="background:#a8c5d8">
       <div class="month">APR</div>
       <div class="day">27</div>
     </div>
@@ -661,7 +611,7 @@ box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   </div>
 
   <div class="hotel-item">
-    <div class="hotel-date-badge" style="background:var(--gold)">
+    <div class="hotel-date-badge" style="background:#c9a96e">
       <div class="month">APR</div>
       <div class="day">28</div>
     </div>
@@ -686,7 +636,7 @@ box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   </div>
 
   <div class="hotel-item">
-    <div class="hotel-date-badge" style="background:var(--moss)">
+    <div class="hotel-date-badge" style="background:#7a9e7e">
       <div class="month">APR</div>
       <div class="day">30</div>
     </div>
@@ -891,14 +841,6 @@ box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   <p style="margin-top:0.5rem;font-size:0.7rem">函館 · 洞爺湖 · 二世古 · 小樽 · 富良野 · 美瑛 · 札幌</p>
 </footer>
 
-<!-- SHARE BUTTONS -->
-
-<div class="share-bar">
-  <button class="share-btn primary" onclick="shareItinerary()">📤 分享行程</button>
-  <button class="share-btn copy-btn" id="copyBtn" onclick="copyLink()">🔗 複製連結</button>
-</div>
-<div class="toast" id="toast">✅ 連結已複製！</div>
-
 <script>
 // Sakura petals
 const petalContainer = document.getElementById('petals');
@@ -915,47 +857,6 @@ for (let i = 0; i < 18; i++) {
     opacity: 0;
   `;
   petalContainer.appendChild(p);
-}
-
-// Share
-async function shareItinerary() {
-  const shareData = {
-    title: '北海道春旅 2026',
-    text: '北海道九天八夜春旅行程 4/25–5/3 🌸✈️',
-    url: window.location.href
-  };
-  try {
-    if (navigator.share) {
-      await navigator.share(shareData);
-    } else {
-      copyLink();
-    }
-  } catch(e) {
-    copyLink();
-  }
-}
-
-function copyLink() {
-  const url = window.location.href;
-  navigator.clipboard.writeText(url).then(() => {
-    showToast('✅ 連結已複製！');
-  }).catch(() => {
-    // fallback
-    const input = document.createElement('input');
-    input.value = url;
-    document.body.appendChild(input);
-    input.select();
-    document.execCommand('copy');
-    document.body.removeChild(input);
-    showToast('✅ 連結已複製！');
-  });
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
 }
 </script>
 
