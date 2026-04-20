@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北海道春旅 2026 ✈ 4/25–5/3</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;900&family=Shippori+Mincho:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --cream: #f7f3ec;
+    --blush: #e8d5c4;
+    --sakura: #e8a0a8;
+    --sakura-deep: #c96a7a;
+    --sky: #a8c5d8;
+    --snow: #dde8f0;
+    --gold: #c9a96e;
+    --moss: #7a9e7e;
+    --text: #2d2d3a;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–cream);
+color: var(–text);
+font-family: ‘DM Sans’, ‘Noto Serif TC’, sans-serif;
+overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+position: relative;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: var(–ink);
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 20% 80%, rgba(232,160,168,0.25) 0%, transparent 60%),
+radial-gradient(ellipse 60% 50% at 80% 20%, rgba(168,197,216,0.2) 0%, transparent 60%),
+radial-gradient(ellipse 100% 80% at 50% 100%, rgba(201,169,110,0.1) 0%, transparent 50%);
+}
+
+/* Falling sakura petals */
+.petals { position: absolute; inset: 0; pointer-events: none; }
+.petal {
+position: absolute;
+width: 8px; height: 10px;
+background: radial-gradient(ellipse at 40% 30%, #f4c2c8, #e8a0a8);
+border-radius: 50% 0 50% 0;
+opacity: 0;
+animation: fall linear infinite;
+}
+@keyframes fall {
+0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+10% { opacity: 0.7; }
+90% { opacity: 0.3; }
+100% { transform: translateY(100vh) rotate(720deg) translateX(60px); opacity: 0; }
+}
+
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+
+.hero-eyebrow {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 0.75rem;
+font-weight: 300;
+letter-spacing: 0.4em;
+color: var(–sakura);
+text-transform: uppercase;
+margin-bottom: 1.5rem;
+opacity: 0;
+animation: fadeUp 0.8s ease 0.3s forwards;
+}
+
+.hero-title {
+font-family: ‘Shippori Mincho’, ‘Noto Serif TC’, serif;
+font-weight: 800;
+font-size: clamp(3.5rem, 12vw, 8rem);
+color: var(–cream);
+line-height: 0.9;
+letter-spacing: -0.02em;
+margin-bottom: 1rem;
+opacity: 0;
+animation: fadeUp 0.8s ease 0.5s forwards;
+}
+.hero-title span { color: var(–sakura); }
+
+.hero-subtitle {
+font-family: ‘Noto Serif TC’, serif;
+font-size: clamp(1rem, 2.5vw, 1.4rem);
+font-weight: 300;
+color: var(–blush);
+letter-spacing: 0.15em;
+margin-bottom: 2.5rem;
+opacity: 0;
+animation: fadeUp 0.8s ease 0.7s forwards;
+}
+
+.hero-dates {
+display: inline-flex;
+align-items: center;
+gap: 1rem;
+background: rgba(247,243,236,0.08);
+border: 1px solid rgba(232,160,168,0.3);
+border-radius: 100px;
+padding: 0.6rem 1.8rem;
+font-size: 0.85rem;
+color: var(–blush);
+letter-spacing: 0.1em;
+opacity: 0;
+animation: fadeUp 0.8s ease 0.9s forwards;
+}
+.hero-dates .dot { width: 5px; height: 5px; border-radius: 50%; background: var(–sakura); }
+
+.scroll-hint {
+position: absolute;
+bottom: 2.5rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+color: rgba(247,243,236,0.4);
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+z-index: 2;
+animation: bounce 2s ease infinite;
+}
+.scroll-hint::after {
+content: ‘’;
+width: 1px;
+height: 40px;
+background: linear-gradient(to bottom, rgba(232,160,168,0.6), transparent);
+}
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* MAIN LAYOUT */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* SECTION HEADERS */
+.section { padding: 4rem 0 2rem; }
+.section-header {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 2rem;
+}
+.section-icon {
+width: 44px; height: 44px;
+border-radius: 12px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.3rem;
+flex-shrink: 0;
+}
+.section-icon.flight { background: linear-gradient(135deg, var(–sky), #7aafcf); }
+.section-icon.car { background: linear-gradient(135deg, #b5c99a, var(–moss)); }
+.section-icon.hotel { background: linear-gradient(135deg, var(–sakura), var(–sakura-deep)); }
+.section-icon.days { background: linear-gradient(135deg, var(–gold), #b8935a); }
+
+.section-title {
+font-family: ‘Shippori Mincho’, serif;
+font-size: 1.6rem;
+font-weight: 700;
+color: var(–ink);
+}
+.section-divider {
+flex: 1;
+height: 1px;
+background: linear-gradient(to right, var(–blush), transparent);
+}
+
+/* FLIGHT CARDS */
+.flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media(max-width:640px){ .flight-grid{grid-template-columns:1fr;} }
+
+.flight-card {
+background: white;
+border-radius: 16px;
+padding: 1.5rem;
+box-shadow: 0 2px 20px rgba(26,26,46,0.06);
+position: relative;
+overflow: hidden;
+}
+.flight-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 3px;
+}
+.flight-card.outbound::before { background: linear-gradient(to right, var(–sakura), var(–sakura-deep)); }
+.flight-card.return::before { background: linear-gradient(to right, var(–sky), #5a9abf); }
+
+.flight-label {
+font-size: 0.65rem;
+font-weight: 600;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+margin-bottom: 1rem;
+padding: 0.25rem 0.6rem;
+border-radius: 100px;
+display: inline-block;
+}
+.flight-card.outbound .flight-label { background: rgba(232,160,168,0.15); color: var(–sakura-deep); }
+.flight-card.return .flight-label { background: rgba(168,197,216,0.2); color: #3a7a9f; }
+
+.flight-route {
+display: flex;
+align-items: center;
+gap: 0.8rem;
+margin-bottom: 0.5rem;
+}
+.airport-code {
+font-family: ‘Shippori Mincho’, serif;
+font-size: 1.8rem;
+font-weight: 800;
+color: var(–ink);
+line-height: 1;
+}
+.flight-arrow { color: var(–gold); font-size: 1rem; flex: 1; text-align: center; }
+.flight-time {
+font-size: 0.75rem;
+color: #888;
+margin-top: 0.15rem;
+}
+.flight-info-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 0.8rem;
+padding-top: 0.8rem;
+border-top: 1px solid rgba(0,0,0,0.06);
+font-size: 0.75rem;
+color: #777;
+}
+.flight-number { font-weight: 600; color: var(–ink); }
+
+.flight-segment { margin-bottom: 1rem; }
+.flight-segment:last-child { margin-bottom: 0; }
+.segment-divider { border: none; border-top: 1px dashed rgba(0,0,0,0.1); margin: 0.8rem 0; }
+
+/* CAR RENTAL */
+.car-card {
+background: white;
+border-radius: 16px;
+padding: 1.5rem 2rem;
+box-shadow: 0 2px 20px rgba(26,26,46,0.06);
+}
+.car-timeline {
+display: flex;
+gap: 2rem;
+margin-bottom: 1.5rem;
+}
+@media(max-width:600px){ .car-timeline{flex-direction:column;gap:1rem;} }
+.car-event { flex: 1; }
+.car-event-type {
+font-size: 0.65rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+font-weight: 600;
+color: var(–moss);
+margin-bottom: 0.3rem;
+}
+.car-event-time {
+font-family: ‘Shippori Mincho’, serif;
+font-size: 1.3rem;
+font-weight: 700;
+color: var(–ink);
+}
+.car-event-loc { font-size: 0.8rem; color: #888; margin-top: 0.2rem; }
+.car-arrow {
+align-self: center;
+font-size: 1.5rem;
+color: var(–moss);
+opacity: 0.5;
+}
+
+.car-features {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+}
+.car-tag {
+background: rgba(122,158,126,0.1);
+color: var(–moss);
+border: 1px solid rgba(122,158,126,0.25);
+border-radius: 100px;
+padding: 0.3rem 0.8rem;
+font-size: 0.72rem;
+font-weight: 500;
+}
+
+/* HOTEL LIST */
+.hotel-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.hotel-item {
+background: white;
+border-radius: 14px;
+padding: 1.2rem 1.5rem;
+display: flex;
+align-items: center;
+gap: 1.2rem;
+box-shadow: 0 2px 12px rgba(26,26,46,0.05);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+.hotel-item:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(26,26,46,0.1); }
+
+.hotel-date-badge {
+min-width: 56px;
+text-align: center;
+background: var(–sakura);
+border-radius: 10px;
+padding: 0.5rem;
+flex-shrink: 0;
+}
+.hotel-date-badge .month { font-size: 0.6rem; font-weight: 700; color: white; letter-spacing: 0.05em; text-transform: uppercase; }
+.hotel-date-badge .day { font-family: ‘Shippori Mincho’, serif; font-size: 1.4rem; font-weight: 800; color: white; line-height: 1; }
+
+.hotel-info { flex: 1; }
+.hotel-name { font-weight: 600; font-size: 0.95rem; color: var(–ink); margin-bottom: 0.2rem; }
+.hotel-city { font-size: 0.75rem; color: #999; }
+.hotel-times { font-size: 0.72rem; color: #aaa; margin-top: 0.15rem; }
+
+.hotel-map-btn {
+display: inline-flex;
+align-items: center;
+gap: 0.3rem;
+padding: 0.4rem 0.9rem;
+border-radius: 100px;
+background: rgba(232,160,168,0.1);
+color: var(–sakura-deep);
+font-size: 0.72rem;
+font-weight: 500;
+text-decoration: none;
+border: 1px solid rgba(232,160,168,0.3);
+transition: background 0.2s, border-color 0.2s;
+white-space: nowrap;
+}
+.hotel-map-btn:hover { background: rgba(232,160,168,0.2); border-color: var(–sakura); }
+
+/* DAY TIMELINE */
+.days-container { padding-bottom: 4rem; }
+.day-block {
+display: grid;
+grid-template-columns: 80px 1fr;
+gap: 0 1.5rem;
+margin-bottom: 2.5rem;
+}
+@media(max-width:500px){ .day-block{grid-template-columns:60px 1fr;gap:0 1rem;} }
+
+.day-meta { text-align: right; padding-top: 0.3rem; }
+.day-num {
+font-family: ‘Shippori Mincho’, serif;
+font-size: 2.5rem;
+font-weight: 800;
+color: var(–blush);
+line-height: 1;
+}
+.day-label { font-size: 0.65rem; color: #bbb; letter-spacing: 0.05em; }
+.day-date { font-size: 0.72rem; color: #aaa; margin-top: 0.2rem; }
+
+.day-content { border-left: 2px solid var(–blush); padding-left: 1.5rem; padding-bottom: 1rem; position: relative; }
+.day-content::before {
+content: ‘’;
+position: absolute;
+left: -6px; top: 8px;
+width: 10px; height: 10px;
+border-radius: 50%;
+background: var(–sakura);
+border: 2px solid white;
+box-shadow: 0 0 0 2px var(–sakura);
+}
+
+.day-title {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 1rem;
+font-weight: 700;
+color: var(–ink);
+margin-bottom: 0.8rem;
+}
+
+.spot-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.spot-item {
+display: flex;
+align-items: baseline;
+gap: 0.6rem;
+font-size: 0.85rem;
+color: #555;
+}
+.spot-item .dot-sm { width: 5px; height: 5px; border-radius: 50%; background: var(–sakura); flex-shrink: 0; margin-top: 0.45rem; }
+.spot-item a {
+color: #555;
+text-decoration: none;
+border-bottom: 1px dotted rgba(201,106,122,0.4);
+transition: color 0.2s, border-color 0.2s;
+}
+.spot-item a:hover { color: var(–sakura-deep); border-color: var(–sakura-deep); }
+
+.event-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+font-size: 0.75rem;
+font-weight: 600;
+color: var(–moss);
+background: rgba(122,158,126,0.12);
+border-radius: 100px;
+padding: 0.2rem 0.7rem;
+margin-bottom: 0.5rem;
+}
+
+/* FOOTER */
+footer {
+background: var(–ink);
+color: rgba(247,243,236,0.4);
+text-align: center;
+padding: 2.5rem;
+font-size: 0.78rem;
+letter-spacing: 0.05em;
+}
+footer strong { color: var(–sakura); }
+
+/* SHARE BUTTON */
+.share-bar {
+position: fixed;
+bottom: 1.5rem;
+right: 1.5rem;
+z-index: 100;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+align-items: flex-end;
+}
+
+.share-btn {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+background: var(–ink);
+color: white;
+border: none;
+border-radius: 100px;
+padding: 0.7rem 1.3rem;
+font-size: 0.82rem;
+font-weight: 500;
+cursor: pointer;
+box-shadow: 0 4px 20px rgba(26,26,46,0.35);
+transition: transform 0.2s, box-shadow 0.2s;
+font-family: ‘DM Sans’, sans-serif;
+letter-spacing: 0.02em;
+}
+.share-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,26,46,0.45); }
+.share-btn.primary { background: linear-gradient(135deg, var(–sakura-deep), #a84a5e); }
+.share-btn.copy-btn { background: linear-gradient(135deg, #5a7a5e, var(–moss)); }
+
+.toast {
+position: fixed;
+bottom: 6rem;
+right: 1.5rem;
+background: var(–ink);
+color: var(–cream);
+padding: 0.7rem 1.2rem;
+border-radius: 10px;
+font-size: 0.82rem;
+opacity: 0;
+transform: translateY(10px);
+transition: all 0.3s;
+pointer-events: none;
+box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* Print */
+@media print {
+.share-bar, .scroll-hint { display: none; }
+.hero { min-height: 40vh; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="petals" id="petals"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">春の北海道 · Spring Journey 2026</p>
+    <h1 class="hero-title">北<span>海</span>道<br>春旅</h1>
+    <p class="hero-subtitle">函館 · 洞爺湖 · 二世古 · 小樽 · 富良野 · 札幌</p>
+    <div class="hero-dates">
+      <span>2026 / 04 / 25</span>
+      <span class="dot"></span>
+      <span>九天八夜</span>
+      <span class="dot"></span>
+      <span>2026 / 05 / 03</span>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<div class="container">
+
+  <!-- FLIGHTS -->
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon flight">✈️</div>
+      <h2 class="section-title">航班資訊</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="flight-grid">
+      <!-- Outbound -->
+      <div class="flight-card outbound">
+        <span class="flight-label">去程 · 4/25 (六)</span>
+
+```
+    <div class="flight-segment">
+      <div class="flight-route">
+        <div>
+          <div class="airport-code">TPE</div>
+          <div class="flight-time">10:10</div>
+        </div>
+        <div class="flight-arrow">──✈──▶</div>
+        <div style="text-align:right">
+          <div class="airport-code">CTS</div>
+          <div class="flight-time">15:00</div>
+        </div>
+      </div>
+      <div class="flight-info-row">
+        <span>台北 → 札幌</span>
+        <span class="flight-number">BR116 · 長榮航空</span>
+      </div>
+    </div>
+
+    <hr class="segment-divider">
+
+    <div class="flight-segment">
+      <div class="flight-route">
+        <div>
+          <div class="airport-code">CTS</div>
+          <div class="flight-time">17:55</div>
+        </div>
+        <div class="flight-arrow">──✈──▶</div>
+        <div style="text-align:right">
+          <div class="airport-code">HKD</div>
+          <div class="flight-time">18:30</div>
+        </div>
+      </div>
+      <div class="flight-info-row">
+        <span>札幌 → 函館</span>
+        <span class="flight-number">NH4857 · 全日空</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Return -->
+  <div class="flight-card return">
+    <span class="flight-label">回程 · 5/3 (日)</span>
+
+    <div class="flight-segment">
+      <div class="flight-route">
+        <div>
+          <div class="airport-code">CTS</div>
+          <div class="flight-time">16:15</div>
+        </div>
+        <div class="flight-arrow">──✈──▶</div>
+        <div style="text-align:right">
+          <div class="airport-code">TPE</div>
+          <div class="flight-time">19:15</div>
+        </div>
+      </div>
+      <div class="flight-info-row">
+        <span>札幌 → 台北</span>
+        <span class="flight-number">BR115 · 長榮航空</span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- CAR RENTAL -->
+
+  <section class="section" style="padding-top:1rem">
+    <div class="section-header">
+      <div class="section-icon car">🚗</div>
+      <h2 class="section-title">租車資訊</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="car-card">
+      <div class="car-timeline">
+        <div class="car-event">
+          <div class="car-event-type">取車</div>
+          <div class="car-event-time">4/27 &nbsp;09:00</div>
+          <div class="car-event-loc">Times 租車函館站前店</div>
+        </div>
+        <div class="car-arrow">→</div>
+        <div class="car-event">
+          <div class="car-event-type">還車</div>
+          <div class="car-event-time">5/1 &nbsp;17:00</div>
+          <div class="car-event-loc">Times 租車札幌中島公園店</div>
+        </div>
+      </div>
+      <div class="car-features">
+        <span class="car-tag">AT 自動排檔</span>
+        <span class="car-tag">ETC 裝置</span>
+        <span class="car-tag">導航</span>
+        <span class="car-tag">HEP 高速通行證</span>
+        <span class="car-tag">4WD</span>
+        <span class="car-tag">雪胎</span>
+        <span class="car-tag">Super Safety Package</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+
+  <section class="section" style="padding-top:1rem">
+    <div class="section-header">
+      <div class="section-icon hotel">🏨</div>
+      <h2 class="section-title">住宿清單</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="hotel-list">
+
+```
+  <div class="hotel-item">
+    <div class="hotel-date-badge">
+      <div class="month">APR</div>
+      <div class="day">25</div>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">Gran Palette Hakodate</div>
+      <div class="hotel-city">📍 函館 · 2 晚（4/25–4/27）</div>
+    </div>
+    <a class="hotel-map-btn" href="https://maps.google.com/?q=Gran+Palette+Hakodate" target="_blank">🗺 地圖</a>
+  </div>
+
+  <div class="hotel-item">
+    <div class="hotel-date-badge" style="background:var(--sky)">
+      <div class="month">APR</div>
+      <div class="day">27</div>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">洞爺湖畔亭酒店</div>
+      <div class="hotel-city">📍 洞爺湖 · 1 晚（4/27–4/28）</div>
+      <div class="hotel-times">入住 15:00 · 退房 10:00</div>
+    </div>
+    <a class="hotel-map-btn" href="https://maps.google.com/?q=洞爺湖畔亭" target="_blank">🗺 地圖</a>
+  </div>
+
+  <div class="hotel-item">
+    <div class="hotel-date-badge" style="background:var(--gold)">
+      <div class="month">APR</div>
+      <div class="day">28</div>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">Park Hyatt Niseko Hanazono</div>
+      <div class="hotel-city">📍 二世古 · 1 晚（4/28–4/29）</div>
+    </div>
+    <a class="hotel-map-btn" href="https://maps.google.com/?q=Park+Hyatt+Niseko+Hanazono" target="_blank">🗺 地圖</a>
+  </div>
+
+  <div class="hotel-item">
+    <div class="hotel-date-badge" style="background:#8ab4c5">
+      <div class="month">APR</div>
+      <div class="day">29</div>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">北海道小樽運河托麗芙特酒店</div>
+      <div class="hotel-city">📍 小樽 · 1 晚（4/29–4/30）</div>
+      <div class="hotel-times">入住 15:00 · 退房 11:00</div>
+    </div>
+    <a class="hotel-map-btn" href="https://maps.google.com/?q=Dormy+Inn+Otaru" target="_blank">🗺 地圖</a>
+  </div>
+
+  <div class="hotel-item">
+    <div class="hotel-date-badge" style="background:var(--moss)">
+      <div class="month">APR</div>
+      <div class="day">30</div>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">栞 -shiori- FURANO</div>
+      <div class="hotel-city">📍 富良野 · 1 晚（4/30–5/1）</div>
+    </div>
+    <a class="hotel-map-btn" href="https://maps.google.com/?q=栞+FURANO" target="_blank">🗺 地圖</a>
+  </div>
+
+  <div class="hotel-item">
+    <div class="hotel-date-badge" style="background:#c47a8a">
+      <div class="month">MAY</div>
+      <div class="day">1</div>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">APA 札幌薄野站前飯店</div>
+      <div class="hotel-city">📍 札幌 · 2 晚（5/1–5/3）</div>
+    </div>
+    <a class="hotel-map-btn" href="https://maps.google.com/?q=APA+Hotel+Sapporo+Susukino+Ekimae" target="_blank">🗺 地圖</a>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- DAILY ITINERARY -->
+
+  <section class="section days-container" style="padding-top:1rem">
+    <div class="section-header">
+      <div class="section-icon days">🌸</div>
+      <h2 class="section-title">每日行程</h2>
+      <div class="section-divider"></div>
+    </div>
+
+```
+<!-- Day 1 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">01</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">4/25 六</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">✈ 抵達函館</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.app.goo.gl/kdryooSjFdA55KqWA" target="_blank">八番坂</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=函館山展望台" target="_blank">函館山展望台（百萬夜景）</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 2 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">02</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">4/26 日</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">🌸 函館大眾運輸賞櫻</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=五稜郭公園" target="_blank">五稜郭公園（星形櫻花林）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=函館公園" target="_blank">函館公園</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=函館+桜が丘通り" target="_blank">櫻之丘通（夢幻櫻花隧道）</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 3 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">03</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">4/27 一</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">🚗 函館 ➔ 登別 ➔ 洞爺湖（開始自駕）</div>
+    <div class="event-badge">🔑 09:00 取車</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.app.goo.gl/TBAKWHybmWwkQVsd8" target="_blank">道の駅 YOU・遊・もり（途中休息站）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.app.goo.gl/1hsfwbkXwJNFWsc99" target="_blank">かにめし本舗 かなや（螃蟹便當名店）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=登別地獄谷" target="_blank">登別地獄谷</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 4 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">04</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">4/28 二</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">🏔 洞爺湖 ➔ 二世古</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=洞爺湖+筒倉展望台" target="_blank">筒倉展望台（洞爺湖全景）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.app.goo.gl/zBkrXvtmpqtQKwT89" target="_blank">真狩村（羊蹄山景觀）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.app.goo.gl/UYQpdEYCNA6AjRxJ6" target="_blank">羊蹄姿見池（Yotei Sugatami Pond）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=道の駅+ニセコビュープラザ" target="_blank">道之驛 Niseko View Plaza</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=真狩神社+北海道" target="_blank">真狩神社（羊蹄山與櫻花參道）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=ふきだし公園+京極" target="_blank">ふきだし公園 / 名水公園</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 5 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">05</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">4/29 三</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">⛵ 二世古 ➔ 小樽</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=小樽+船見坂" target="_blank">船見坂（俯瞰海港）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=小樽市手宮公園" target="_blank">手宮公園（賞海景櫻花）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=小樽天狗山スキー場" target="_blank">天狗山（天狗一本櫻與夜景）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=小樽運河" target="_blank">小樽運河</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 6 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">06</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">4/30 四</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">🍫 小樽 ➔ 札幌近郊 ➔ 富良野</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=白い恋人パーク" target="_blank">白色戀人公園</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=東京大学北海道演習林" target="_blank">東京大學演習林樹木園（殘雪山峰櫻花）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=ニングルテラス+富良野" target="_blank">精靈露台（Ningle Terrace）</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 7 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">07</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">5/1 五</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">🌾 富良野 ➔ 美瑛 ➔ 札幌還車</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=富良野+朝日ヶ丘公園" target="_blank">朝日丘公園（富良野賞櫻）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=鳥沼公園+富良野" target="_blank">鳥沼公園（綠色湧泉池）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=上御料一本桜" target="_blank">上御料一本櫻</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=白金青い池" target="_blank">美瑛青池（白金青い池）</a></li>
+    </ul>
+    <div class="event-badge" style="margin-top:0.6rem">🚗 17:00 前抵達札幌中島公園還車</div>
+  </div>
+</div>
+
+<!-- Day 8 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">08</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">5/2 六</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">🛍 札幌都會逛街與賞櫻</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=北海道神宮" target="_blank">北海道神宮 &amp; 圓山公園（櫻花與梅花）</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=中島公園+札幌" target="_blank">中島公園</a></li>
+      <li class="spot-item"><span class="dot-sm"></span><a href="https://maps.google.com/?q=サッポロファクトリー" target="_blank">札幌工廠（Sapporo Factory）</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Day 9 -->
+<div class="day-block">
+  <div class="day-meta">
+    <div class="day-num">09</div>
+    <div class="day-label">DAY</div>
+    <div class="day-date">5/3 日</div>
+  </div>
+  <div class="day-content">
+    <div class="day-title">✈ 返程</div>
+    <ul class="spot-list">
+      <li class="spot-item"><span class="dot-sm"></span>新千歲機場最後採買</li>
+      <li class="spot-item"><span class="dot-sm"></span>16:15 搭機返台 ✈ BR115</li>
+    </ul>
+  </div>
+</div>
+```
+
+  </section>
+</div>
+
+<footer>
+  <p>北海道春旅 2026 &nbsp;·&nbsp; <strong>4/25 – 5/3</strong> &nbsp;·&nbsp; 九天八夜</p>
+  <p style="margin-top:0.5rem;font-size:0.7rem">函館 · 洞爺湖 · 二世古 · 小樽 · 富良野 · 美瑛 · 札幌</p>
+</footer>
+
+<!-- SHARE BUTTONS -->
+
+<div class="share-bar">
+  <button class="share-btn primary" onclick="shareItinerary()">📤 分享行程</button>
+  <button class="share-btn copy-btn" id="copyBtn" onclick="copyLink()">🔗 複製連結</button>
+</div>
+<div class="toast" id="toast">✅ 連結已複製！</div>
+
+<script>
+// Sakura petals
+const petalContainer = document.getElementById('petals');
+for (let i = 0; i < 18; i++) {
+  const p = document.createElement('div');
+  p.className = 'petal';
+  const size = 6 + Math.random() * 8;
+  p.style.cssText = `
+    left: ${Math.random() * 100}%;
+    width: ${size}px;
+    height: ${size * 1.2}px;
+    animation-duration: ${6 + Math.random() * 8}s;
+    animation-delay: ${Math.random() * 10}s;
+    opacity: 0;
+  `;
+  petalContainer.appendChild(p);
+}
+
+// Share
+async function shareItinerary() {
+  const shareData = {
+    title: '北海道春旅 2026',
+    text: '北海道九天八夜春旅行程 4/25–5/3 🌸✈️',
+    url: window.location.href
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      copyLink();
+    }
+  } catch(e) {
+    copyLink();
+  }
+}
+
+function copyLink() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    showToast('✅ 連結已複製！');
+  }).catch(() => {
+    // fallback
+    const input = document.createElement('input');
+    input.value = url;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    showToast('✅ 連結已複製！');
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+
+</body>
+</html>
